@@ -6,15 +6,7 @@ A clone of the popular e-commerce app Myntra.
 
 ## Overview
 
-This project is a clone of the Myntra app, built with Flutter framework. It aims to replicate the main features and user interface of the Myntra app, allowing users to browse and shop for fashion items.
-
-## Features
-
-- Browse and search for fashion items
-- View detailed product information and images
-- Add items to cart and proceed to checkout
-- Apply filters and sorting options
-- User authentication and profile management
+This project is a clone of the Myntra app, built with Flutter framework.
 
 ## Screenshots
 
@@ -23,7 +15,10 @@ This project is a clone of the Myntra app, built with Flutter framework. It aims
 
 ![Insider Page](assets/ScreenShots/ss2.jpg)
 
-![ ](assets/ScreenShots/ss2.jpg)
+![ ](assets/ScreenShots/ss3.jpg)
+
+![Demo](assets/ScreenShots/myntraDemo.gif)
+*Click the image to view the demo GIF*
 
 ## Installation
 
