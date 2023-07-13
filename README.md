@@ -1,16 +1,33 @@
-# myntra_clone
+# Myntra Clone
 
-A new Flutter project.
+![Myntra Clone Logo](assets/myntraLogo.png)
 
-## Getting Started
+A clone of the popular e-commerce app Myntra.
 
-This project is a starting point for a Flutter application.
+## Overview
 
-A few resources to get you started if this is your first Flutter project:
+This project is a clone of the Myntra app, built with Flutter framework. It aims to replicate the main features and user interface of the Myntra app, allowing users to browse and shop for fashion items.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Browse and search for fashion items
+- View detailed product information and images
+- Add items to cart and proceed to checkout
+- Apply filters and sorting options
+- User authentication and profile management
+
+## Screenshots
+
+![Login Screen](assets/ScreenShots/ss1.jpg)
+
+
+![Insider Page](assets/ScreenShots/ss2.jpg)
+
+![ ](assets/ScreenShots/ss2.jpg)
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Bimal022/myntra_clone.git
