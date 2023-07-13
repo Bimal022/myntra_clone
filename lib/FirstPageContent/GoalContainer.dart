@@ -10,8 +10,8 @@ class GoalContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(15, 15, 15, 15),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.fromLTRB(15, 15, 15, 15),
+      decoration: const BoxDecoration(
         color: Color(0XFF282C3F),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(5),
@@ -28,7 +28,7 @@ class GoalContainer extends StatelessWidget {
                 height: 30,
                 width: 30,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 22.5,
               ),
               Column(
@@ -36,18 +36,18 @@ class GoalContainer extends StatelessWidget {
                 children: [
                   Text(
                     text1,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
                   Text(
                     text2,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Color(0XFF96979D),
                       fontSize: 14,
                     ),
@@ -60,13 +60,13 @@ class GoalContainer extends StatelessWidget {
             children: [
               Text(
                 text3,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
+              const Text(
                 "Goal",
                 style: TextStyle(
                   color: Colors.white,
