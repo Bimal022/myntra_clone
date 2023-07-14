@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:loader_overlay/loader_overlay.dart';
 import 'Screens/InsiderPage.dart';
 import 'Screens/LoginPage.dart';
 import 'Screens/HomePage.dart';
@@ -34,14 +35,16 @@ class MyApp extends StatelessWidget {
             );
           } else {
             // User is not signed in, show the login page
-            return MaterialApp(
-              // debugShowCheckedModeBanner: false,
-              initialRoute: '/',
-              routes: {
-                '/': (context) => LoginPage(),
-                'MainScreen': (context) => MainScreen(),
-                '/insider': (context) => InsiderPage(),
-              },
+            return GlobalLoaderOverlay(
+              child: MaterialApp(
+                // debugShowCheckedModeBanner: false,
+                initialRoute: '/',
+                routes: {
+                  '/': (context) => LoginPage(),
+                  'MainScreen': (context) => MainScreen(),
+                  '/insider': (context) => InsiderPage(),
+                },
+              ),
             );
           }
         }
@@ -108,7 +111,12 @@ class ProfilePage extends StatelessWidget {
     try {
       await FirebaseAuth.instance.signOut();
       // Navigate back to the login page
-      Navigator.pushReplacementNamed(context, '/');
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => LoginPage(),
+        ),
+      );
     } catch (e) {
       // Handle sign-out error
       print('Error signing out: $e');

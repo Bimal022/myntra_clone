@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../main.dart';
+
 class OtpScreen extends StatefulWidget {
   final String verificationId;
   final String phoneNumber;
@@ -22,7 +24,12 @@ class _OtpScreenState extends State<OtpScreen> {
         smsCode: smsCode,
       );
       await _firebaseAuth.signInWithCredential(credential);
-      Navigator.pushNamed(context, '/MainScreen');
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MainScreen(), // Navigate to MainScreen directly
+        ),
+      );
     } catch (e) {
       showDialog(
         context: context,
