@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myntra_clone/FirstPageContent/BenefitContainer.dart';
 import 'package:myntra_clone/FirstPageContent/GoalContainer.dart';
 
 import '../FirstPageContent/AdsRow.dart';
+import 'LoginPage.dart';
 
 class InsiderPage extends StatelessWidget {
   InsiderPage({
@@ -31,6 +33,22 @@ class InsiderPage extends StatelessWidget {
     },
     // Add more items as needed
   ];
+  Future<void> signOut(BuildContext context) async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      // Navigate back to the login page
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => LoginPage(),
+        ),
+      );
+    } catch (e) {
+      // Handle sign-out error
+      print('Error signing out: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -291,9 +309,8 @@ class InsiderPage extends StatelessWidget {
                         height: 40, // Adjust the height as desired
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, '/');
+                            signOut(context);
                           },
-                          child: const Text('LOG IN'),
                           style: ElevatedButton.styleFrom(
                             primary: const Color(0xFFff3f6c),
                             textStyle: const TextStyle(
@@ -301,6 +318,7 @@ class InsiderPage extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                          child: const Text('LOG IN'),
                         ),
                       ),
                     ),

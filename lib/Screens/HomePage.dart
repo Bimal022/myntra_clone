@@ -4,6 +4,8 @@ import '../HomePageConstants/imageLinks.dart';
 import '../Widgets/cached_image.dart';
 import 'package:myntra_clone/Widgets/bottomNavigationBar.dart';
 
+import 'InsiderPage.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,71 +14,81 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              // color: Theme.of(context).accentColor,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      IconButton(
-                          icon: Image.asset(("assets/myntraLogo.png")),
-                          onPressed: () {}),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Become',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Insider",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0XFFA38A00),
-                                ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        InsiderPage(), // Navigate to MainScreen directly
+                  ),
+                );
+              },
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        IconButton(
+                            icon: Image.asset(("assets/myntraLogo.png")),
+                            onPressed: () {}),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Become',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
                               ),
-                              Image.asset(
-                                "assets/topnavigationBarIcons/greaterthan.png",
-                                width: 10,
-                                height: 10,
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      IconButton(
-                        icon: ImageIcon(AssetImage(
-                          "assets/topnavigationBarIcons/bell.png",
-                        )),
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                        icon: ImageIcon(AssetImage(
-                            "assets/topnavigationBarIcons/heart.png")),
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                        icon: ImageIcon(
-                          AssetImage("assets/topnavigationBarIcons/bag.png"),
+                            ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Insider",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0XFFA38A00),
+                                  ),
+                                ),
+                                Image.asset(
+                                  "assets/topnavigationBarIcons/greaterthan.png",
+                                  width: 10,
+                                  height: 10,
+                                )
+                              ],
+                            ),
+                          ],
                         ),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        IconButton(
+                          icon: ImageIcon(AssetImage(
+                            "assets/topnavigationBarIcons/bell.png",
+                          )),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: ImageIcon(AssetImage(
+                              "assets/topnavigationBarIcons/heart.png")),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: ImageIcon(
+                            AssetImage("assets/topnavigationBarIcons/bag.png"),
+                          ),
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             Container(

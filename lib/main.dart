@@ -127,17 +127,16 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: double.infinity,
-        child: TextButton(
+        width: 200,
+        child: ElevatedButton(
           onPressed: () {
             signOut(context);
           },
-          style: TextButton.styleFrom(
-            backgroundColor: const Color(0xFFff3f6c),
+          style: ElevatedButton.styleFrom(
+            primary: const Color(0xFFff3f6c),
             textStyle: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
             ),
           ),
           child: const Text('Sign Out'),
