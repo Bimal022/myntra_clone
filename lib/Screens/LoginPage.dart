@@ -1,14 +1,42 @@
 import 'package:flutter/material.dart';
-
-import 'InsiderPage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'OTPScreen.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  var receivedID = '';
+  Future<void> signInWithPhone(String phoneNumber, BuildContext context) async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    await auth.verifyPhoneNumber(
+      phoneNumber: phoneNumber,
+      verificationCompleted: (PhoneAuthCredential credential) async {
+        await auth.signInWithCredential(credential);
+        Navigator.pushNamed(context, '/MainScreen');
+      },
+      verificationFailed: (FirebaseAuthException e) {
+        print(e.message);
+      },
+      codeSent: (String verificationId, int? resendToken) {
+        receivedID = verificationId;
+        setState(() {});
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => OtpScreen(
+              verificationId: verificationId,
+              phoneNumber: phoneNumber,
+            ),
+          ),
+        );
+      },
+      codeAutoRetrievalTimeout: (String verificationId) {},
+    );
+  }
+
   bool isPrefixFocused = false;
   final mobileNumberController = TextEditingController();
 
@@ -117,12 +145,19 @@ class _LoginPageState extends State<LoginPage> {
                           ],
                         ),
                       ),
-                      const textContainer(),
+                      textContainer(),
                       SizedBox(
                         width: double.infinity,
-                        child: TextButton(
+                        child: ElevatedButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, '/insider');
+                            String phoneNumber =
+                                '+91 ' + mobileNumberController.text.trim();
+                            if (phoneNumber.isNotEmpty) {
+                              signInWithPhone(phoneNumber, context);
+                            } else {
+                              // Show an error message or perform any necessary action for empty phone number
+                              print("Phone number is empty.");
+                            }
                           },
                           style: ElevatedButton.styleFrom(
                             primary: const Color(0xFFff3f6c),
@@ -173,8 +208,6 @@ class _LoginPageState extends State<LoginPage> {
 }
 
 class textContainer extends StatelessWidget {
-  const textContainer({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Container(
