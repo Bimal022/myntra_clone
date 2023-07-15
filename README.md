@@ -11,7 +11,7 @@ This project is a clone of the Myntra app, built with Flutter framework.
 <h2>Screenshots</h2>
 
 <div style="display: flex; flex-wrap: wrap;">
-  <div style="flex: 1; max-width: 200; margin-right: 10px;">
+  <div style="flex: 3; max-width: 200; margin-right: 10px;">
     <img src="assets/ScreenShots/Myntra Demo.gif" alt="Demo" width="50%">
   </div>
 <div style="flex: 1; max-width: 100%;">
