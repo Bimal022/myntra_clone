@@ -10,6 +10,7 @@ This project is a clone of the Myntra app, built with Flutter framework.
 
 ## Screenshots
 ![Demo](assets/ScreenShots/myntraDemo.gif)
+<img src="assets/ScreenShots/myntraDemo.gif" width="50" height="100">
 
 ![Login Screen](assets/ScreenShots/ss1.jpg)
 
