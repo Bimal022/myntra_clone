@@ -8,15 +8,25 @@ A clone of the popular e-commerce app Myntra.
 
 This project is a clone of the Myntra app, built with Flutter framework.
 
-## Screenshots
-![Demo](assets/ScreenShots/myntraDemo.gif)
+<h2>Screenshots</h2>
 
-![Login Screen](assets/ScreenShots/ss1.jpg)
+<div style="display: flex; flex-wrap: wrap;">
+  <div style="flex: 1; max-width: 400px; margin-right: 10px;">
+    <img src="assets/ScreenShots/myntraDemo.gif" alt="Demo" width="100%">
+  </div>
 
-![Insider Page](assets/ScreenShots/ss2.jpg)
+  <div style="flex: 1; max-width: 400px;">
+    <img src="assets/ScreenShots/ss1.jpg" alt="Screenshot 1" width="100%">
+  </div>
 
-![ ](assets/ScreenShots/ss3.jpg)
+  <div style="flex: 1; max-width: 400px; margin-right: 10px;">
+    <img src="assets/ScreenShots/ss2.jpg" alt="Screenshot 2" width="100%">
+  </div>
 
+  <div style="flex: 1; max-width: 400px;">
+    <img src="assets/ScreenShots/ss3.jpg" alt="Screenshot 3" width="100%">
+  </div>
+</div>
 
 ## Installation
 
